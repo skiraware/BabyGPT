@@ -31,6 +31,7 @@ The model was trained with default settings using:
 ```
 !python train.py config/train_shakespeare_char.py --compile=False --always_save_checkpoint=True --eval_interval=5000
 ```
+Since the checkpoint only record in 5000 would be make the progress faster, plus the training must be better as the times go(since there were too many data)
 - **Training Details:** 10.65M parameters, 5,000 iterations, final train loss 0.6248, val loss 1.6801.
 
 Samples were generated using:
