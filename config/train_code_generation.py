@@ -1,0 +1,21 @@
+# config/train_code_generation.py
+out_dir = 'out-code-generation'
+eval_interval = 250
+eval_iters = 200
+log_interval = 10
+always_save_checkpoint = True
+wandb_log = False
+dataset = 'code_generation'
+batch_size = 2  # Reduced from 4
+block_size = 64  # Reduced from 128
+n_layer = 7
+n_head = 5
+n_embd = 210
+dropout = 0.2
+bias = False
+learning_rate = 1e-3
+max_iters = 500  # Reduced from 1000
+lr_decay_iters = 500
+min_lr = 1e-4
+beta2 = 0.99
+warmup_iters = 100

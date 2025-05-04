@@ -1,6 +1,6 @@
 # Fundamentals of Decision and Data Analytics (SEEM3650) - Practical Exam Report
 
-**Name:** [Your Name]  
+**Name:** Fung Sai Wa
 **Student ID:** 1155194766  
 **Due Date:** May 4, midnight
 
@@ -84,10 +84,10 @@ python train.py config/train_shakespeare_char.py --n_layer=7 --n_head={h} --n_em
 
 ### Step 4.1: Dataset Preparation
 
-- **XYZ mod 2:** 766 % 2 = 0 → C/C++ code (but Python used due to availability)  
-- **Dataset Source:** NumPy repository cloned from `https://github.com/numpy/numpy.git`.  
-- **Process:** Aggregated `.py` files into `data/code_generation/input.txt`, truncated to ~1M characters.  
-- **Token Count:** 900,000 tokens (after running `prepare.py`), vocab size=105.
+- **XYZ mod 2:** 766 % 2 = 0 → C/C++ code  
+- **Dataset Source:** Cloned from `https://github.com/The-Young-Programmer/C-CPP-Programming.git`.  
+- **Process:** Aggregated `.c`, `.cpp`, `.h` files into `data/code_generation/input.txt`, duplicated to meet token requirement (~132,433 tokens).  
+- **Token Count:** 476,445 tokens (after running `prepare.py`), vocab size=111.
 
 ### Step 4.2: Training and Generation
 
@@ -97,7 +97,7 @@ The model was trained with a new config `config/train_code_generation.py`:
 ```
 python train.py config/train_code_generation.py --compile=False --out_dir=out-code-generation
 ```
-- **Results:** Final train loss=1.7056, val loss=1.9333.
+- **Results:** Final train loss=1.0083, val loss=0.9693.
 
 Samples were generated with:
 ```
@@ -106,40 +106,56 @@ python sample.py --out_dir=out-code-generation --start='def '
 
 **Generated Code Samples (First 20 Lines):**
 ```
-def bor self.cates import as o the
+def boardace
+case '\n';
+            return ch;
+         }
 
-readled type to ito:
-                     out = ['charsfortance']
-                               return ister(-buk, {'ind')
+             // colord candition to din tition
+           // allt_scording();
+               {
+                cout << "\t\t3.Restetext\t";
+          gotoxy(row, col);
+       cout << "\t\t Presssss Ad\n^-----------------------------------------------------------------------------------------------------------------------
 
-                       if self 0 > 0:
-                                   clict = ['targs'] = ',
-                                                                                                                                                                          'matcodule': {
-        {Intion': 0}_complecks['carr'] = '_chepis':
-          
-def deferequal(var)
-      self._self.file = ""
-       assert_func(x, y) * ""` * arnins are ` objecent this calllllacargeater vars, not alume, andle.ing_ghobjiterfunced = dicl
+			  << "\t\t            "
+		     << "\t\t\t\t"
+	    < "\t\t\t\t\t                 "
+	      << '\n'
+	       <<"\n\t\t  "
 
-
-                       a = n]
-                  lie[]
-                   else]
+---------------
+def Pase erenot Rewecord the to se Record
+/ mainy scalate cublacttion = *
 ```
 
 **Favorite Generated Snippet(s):**
 ```
-def deferequal(var)
-      self._self.file = ""
-       assert_func(x, y) * ""` * arnins are ` objecent this calllllacargeater vars, not alume, andle.ing_ghobjiterfunced = dicl
+def to ( * 10 & X <= 310 && <= 30 && Y <= 250) // Condition For *// For ahn bele othe for the for
+   if (print != "8" || got\n");
+   //********************************4
+   if (X >= 200 & X <= 280; // Box Cllc Funtion
+   {
+      system("cls");
+      if(char*)& (board[9] - 2))
+      {
+         if(board[8] == 2) {
+            if(boarg[i] == 2)
+            gotoxy(30,3);
+            printf("|");
+            gotoxy(row, col);
+            break;
+         case '0':
 ```
-This snippet is interesting as it attempts to define a function with a mix of syntax resembling Python, though incoherent, showing the model's effort to mimic code structure.
+This snippet is most interesting one. Since it got the class, and then it has the if else statement which can do the conditional test. 
+Moreover, it's look like the boardgame like the x have a range of value. And once the board hit certain location, it would become the boarder "|"
+Overall, this is the most structured and fun output with game like logic, despite the errors.
 
 ---
 
 **Notes:**
 
-- GitHub repository set to public and submitted via: [https://forms.gle/BmWevQg6zbNZYyvz9](https://forms.gle/BmWevQg6zbNZYyvz9).  
+- GitHub repository set to public and submitted via google form already
 - Plots saved in `figures/`.  
 - Configuration file: `config/train_code_generation.py`.  
 - Dataset: `data/code_generation/input.txt`.
